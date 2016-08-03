@@ -12,3 +12,4 @@ user_input = gets.strip
 
 input_to_index(user_input)
 move(board, input_to_index)
+puts display_board(board)
