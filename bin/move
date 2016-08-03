@@ -10,4 +10,5 @@ puts "where would you like to go?"
 
 user_input = gets.strip
 
-move(board, user_input)
+input_to_index(user_input)
+move(board, input_to_index)
