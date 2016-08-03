@@ -8,4 +8,4 @@ end
 
 # code your input_to_index and move method here!
 
-user_input.to_i - 1
+user_input.to_i -1
