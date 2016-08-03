@@ -6,4 +6,4 @@ require_relative '../lib/move.rb'
 puts "Welcome to Tic Tac Toe!"
 puts "where would you like to go?"
 
-user_input = gets.string
+user_input = gets.strip
