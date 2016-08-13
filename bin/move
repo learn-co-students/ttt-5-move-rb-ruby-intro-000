@@ -5,9 +5,8 @@ puts "Welcome to Tic Tac Toe!"
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 puts "Where would you like to go?"
 input = gets.strip
-def input_to_index(index)
-  index = user_input
-end
+index = input_to_index
+
 
 
 #board = get_variable_from_file("./bin/move", "board")
