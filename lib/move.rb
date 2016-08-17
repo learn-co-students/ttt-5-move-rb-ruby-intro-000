@@ -15,13 +15,3 @@ end
 def move(board, position, character="X")
   board[position] = character
 end
-
-board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-
-puts "Welcome to Tic Tac Toe!"
-
-index = gets.strip
-index = input_to_index(index)
-move(board, index, "X")
-
-display_board(board)
