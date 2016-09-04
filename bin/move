@@ -3,3 +3,38 @@
 require_relative '../lib/move.rb'
 
 # Code your CLI Here
+#
+# def input_to_index(user_input)
+#   puts "Hey! So give me a number: "
+#   response = gets.strip.to_i
+#   new_response = response - 1
+# # supposed to return -1 for strings that don't have integers. So first I need to
+# # identify if the string has an integer or not.
+#     if response.exclude?(Integer) do
+#       return (-1)
+#     end
+# end
+#
+# def move(board, position, character = "X" || "O")
+#   puts true
+# end
+
+#
+# def input_to_index(user_input)
+#   u2 = user_input.strip.to_i
+#   u2 - 1
+# end
+
+
+puts "Welcome to Tic Tac Toe!"
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Where would you like to go?"
+input = gets.strip
+
+index = input_to_index(input)
+
+move(board, index, character = "X")
+
+puts display_board(board)
