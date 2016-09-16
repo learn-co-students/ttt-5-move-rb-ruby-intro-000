@@ -1,9 +1,11 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/move."
+require_relative '../lib/move.'
 
 puts "Welcome to Tic Tac Toe!"
 
 puts "Where would you like to go?"
 
 move = gets.strip
+
+board = 0
