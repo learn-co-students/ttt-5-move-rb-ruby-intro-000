@@ -8,4 +8,4 @@ puts "Where would you like to go?"
 
 move = gets.strip
 
-board = 0
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
