@@ -7,3 +7,13 @@ def display_board(board)
 end
 
 # code your input_to_index and move method here!
+def input_to_index(user_input)
+  user_int = user_input.to_i
+  board_index = user_int - 1
+end
+
+def move(board, board_index, player = "X")
+  board[board_index] = player
+  # updating the board cell chosen with the payers character
+  # board
+end
