@@ -7,7 +7,11 @@ require_relative '../lib/move.rb'
 board = Array.new(9, " ") #or board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
 
 puts "Welcome to Tic Tac Toe!"
-puts "Where would you like to go? (1-9)"
+puts "Current Board"
+puts ""
+display_board(board)
+puts ""
+puts "Where would you like to go? Enter (1-9)"
 puts ""
 
 input = gets.strip
