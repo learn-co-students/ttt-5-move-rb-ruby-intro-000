@@ -11,7 +11,7 @@ puts "Current Board"
 puts ""
 display_board(board)
 puts ""
-puts "Where would you like to go? Enter (1-9)"
+puts "Where would you like to go ? Enter (1-9)"
 puts ""
 
 input = gets.strip
