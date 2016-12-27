@@ -55,6 +55,7 @@ describe './lib/move.rb' do
     end
 
     it 'allows a tie game' do
+      #except the following is not a tie board!
       board = Array.new(9, " ")
       move(board, 0, "X")
       move(board, 1, "O")
@@ -62,9 +63,9 @@ describe './lib/move.rb' do
       move(board, 3, "O")
       move(board, 4, "X")
       move(board, 5, "O")
-      move(board, 6, "X")
+      move(board, 6, "X") #X already won here, not a tie
       move(board, 7, "X")
-      move(board, 8, "O")      
+      move(board, 8, "O")
 
       expect(board).to eq(["X", "O", "X", "O", "X", "O", "X", "X", "O"])
     end

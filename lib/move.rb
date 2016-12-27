@@ -7,3 +7,12 @@ def display_board(board)
 end
 
 # code your input_to_index and move method here!
+
+def input_to_index(input)
+  return input.to_i - 1
+end
+
+#move_spec seems to call for default team = X.
+def move(board, position, team = "X")
+  board[position] = team
+end
