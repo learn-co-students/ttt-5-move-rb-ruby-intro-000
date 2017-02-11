@@ -1,0 +1,191 @@
+   |   |   
+-----------
+   |   |   
+-----------
+   |   |   
+
+#input_to_index
+  converts a user_input to an integer (FAILED - 1)
+  subtracts 1 from the user_input (FAILED - 2)
+  returns -1 for strings without integers (FAILED - 3)
+
+./lib/move.rb
+  defines a move method (FAILED - 4)
+  #move
+    accepts 3 arguments: the board, the position a player wants to fill and their char, X or O (FAILED - 5)
+    provides a default value for the 3rd argument (FAILED - 6)
+    allows "X" player in the top left position (FAILED - 7)
+    allows "O" player in the middle (FAILED - 8)
+    allows "X" player in the bottom right (FAILED - 9)
+    allows "X" player in the bottom right and "O" in the top left (FAILED - 10)
+    allows "X" to win diagonally (FAILED - 11)
+    allows a tie game (FAILED - 12)
+
+./bin/move executing a CLI Application
+  defines a board variable (FAILED - 13)
+  prints "Welcome to Tic Tac Toe!" (FAILED - 14)
+  asks the user for input (FAILED - 15)
+  converts the users input to an index (FAILED - 16)
+  calls move passing the index (FAILED - 17)
+  move modifies the board correctly (FAILED - 18)
+  calls display_board passing the modified board (FAILED - 19)
+  prints the board with a move to the top left (FAILED - 20)
+
+Failures:
+
+  1) #input_to_index converts a user_input to an integer
+     Failure/Error: expect(input_to_index(user_input)).to be_a(Integer)
+     NoMethodError:
+       undefined method `input_to_index' for #<RSpec::ExampleGroups::InputToIndex:0x00000001bf4ec8>
+     # ./spec/01_input_to_index_spec.rb:8:in `block (2 levels) in <top (required)>'
+
+  2) #input_to_index subtracts 1 from the user_input
+     Failure/Error: expect(input_to_index(user_input)).to be(5)
+     NoMethodError:
+       undefined method `input_to_index' for #<RSpec::ExampleGroups::InputToIndex:0x00000001cd39e8>
+     # ./spec/01_input_to_index_spec.rb:14:in `block (2 levels) in <top (required)>'
+
+  3) #input_to_index returns -1 for strings without integers
+     Failure/Error: expect(input_to_index(user_input)).to be(-1)
+     NoMethodError:
+       undefined method `input_to_index' for #<RSpec::ExampleGroups::InputToIndex:0x00000001cd23e0>
+     # ./spec/01_input_to_index_spec.rb:20:in `block (2 levels) in <top (required)>'
+
+  4) ./lib/move.rb defines a move method
+     Failure/Error: expect(defined?(move)).to be_truthy
+       expected: truthy value
+            got: nil
+     # ./spec/02_move_spec.rb:6:in `block (2 levels) in <top (required)>'
+
+  5) ./lib/move.rb #move accepts 3 arguments: the board, the position a player wants to fill and their char, X or O
+     Failure/Error: expect{move}.to raise_error(ArgumentError)
+       expected ArgumentError, got #<NameError: undefined local variable or method `move' for #<RSpec::ExampleGroups::LibMoveRb::Move:0x000000019df200>> with backtrace:
+         # ./spec/02_move_spec.rb:11:in `block (4 levels) in <top (required)>'
+         # ./spec/02_move_spec.rb:11:in `block (3 levels) in <top (required)>'
+     # ./spec/02_move_spec.rb:11:in `block (3 levels) in <top (required)>'
+
+  6) ./lib/move.rb #move provides a default value for the 3rd argument
+     Failure/Error: expect {move(board, 2)}.to_not raise_error
+       expected no Exception, got #<NoMethodError: undefined method `move' for #<RSpec::ExampleGroups::LibMoveRb::Move:0x00000001967688>> with backtrace:
+         # ./spec/02_move_spec.rb:16:in `block (4 levels) in <top (required)>'
+         # ./spec/02_move_spec.rb:16:in `block (3 levels) in <top (required)>'
+     # ./spec/02_move_spec.rb:16:in `block (3 levels) in <top (required)>'
+
+  7) ./lib/move.rb #move allows "X" player in the top left position
+     Failure/Error: move(board, 0, "X")
+     NoMethodError:
+       undefined method `move' for #<RSpec::ExampleGroups::LibMoveRb::Move:0x0000000192a1c0>
+     # ./spec/02_move_spec.rb:21:in `block (3 levels) in <top (required)>'
+
+  8) ./lib/move.rb #move allows "O" player in the middle
+     Failure/Error: move(board, 4, "O")
+     NoMethodError:
+       undefined method `move' for #<RSpec::ExampleGroups::LibMoveRb::Move:0x000000019279e8>
+     # ./spec/02_move_spec.rb:28:in `block (3 levels) in <top (required)>'
+
+  9) ./lib/move.rb #move allows "X" player in the bottom right
+     Failure/Error: move(board, 8)
+     NoMethodError:
+       undefined method `move' for #<RSpec::ExampleGroups::LibMoveRb::Move:0x000000019255f8>
+     # ./spec/02_move_spec.rb:35:in `block (3 levels) in <top (required)>'
+
+  10) ./lib/move.rb #move allows "X" player in the bottom right and "O" in the top left 
+      Failure/Error: move(board, 0, "O")
+      NoMethodError:
+        undefined method `move' for #<RSpec::ExampleGroups::LibMoveRb::Move:0x0000000191b148>
+      # ./spec/02_move_spec.rb:42:in `block (3 levels) in <top (required)>'
+
+  11) ./lib/move.rb #move allows "X" to win diagonally
+      Failure/Error: move(board, 0)
+      NoMethodError:
+        undefined method `move' for #<RSpec::ExampleGroups::LibMoveRb::Move:0x00000001918790>
+      # ./spec/02_move_spec.rb:50:in `block (3 levels) in <top (required)>'
+
+  12) ./lib/move.rb #move allows a tie game
+      Failure/Error: move(board, 0, "X")
+      NoMethodError:
+        undefined method `move' for #<RSpec::ExampleGroups::LibMoveRb::Move:0x00000001915e00>
+      # ./spec/02_move_spec.rb:59:in `block (3 levels) in <top (required)>'
+
+  13) ./bin/move executing a CLI Application defines a board variable
+      Failure/Error: board = get_variable_from_file("./bin/move", "board")
+      NameError:
+        local variable `board' not defined in ./bin/move.
+      # ./spec/spec_helper.rb:16:in `rescue in get_variable_from_file'
+      # ./spec/spec_helper.rb:13:in `get_variable_from_file'
+      # ./spec/03_cli_spec.rb:9:in `block (2 levels) in <top (required)>'
+
+  14) ./bin/move executing a CLI Application prints "Welcome to Tic Tac Toe!"
+      Failure/Error: expect($stdout).to receive(:puts).with("Welcome to Tic Tac Toe!"), "Make sure `bin/move` has code that can output 'Welcome to Tic Tac Toe!' exactly."
+        (#<IO:0x00000000f71bb0>).puts("Welcome to Tic Tac Toe!")
+            expected: 1 time with arguments: ("Welcome to Tic Tac Toe!")
+            received: 0 times
+      # ./spec/03_cli_spec.rb:18:in `block (2 levels) in <top (required)>'
+
+  15) ./bin/move executing a CLI Application asks the user for input
+      Failure/Error: expect(self).to receive(:gets).and_return("1"), "Make sure `bin/move` is calling `gets` at some point for user input."
+        (#<RSpec::ExampleGroups::BinMoveExecutingACLIApplication:0x00000001500798>).gets(*(any args))
+            expected: 1 time with any arguments
+            received: 0 times with any arguments
+      # ./spec/03_cli_spec.rb:26:in `block (2 levels) in <top (required)>'
+
+  16) ./bin/move executing a CLI Application converts the users input to an index
+      Failure/Error: expect(self).to receive(:input_to_index).and_return(0)
+        (#<RSpec::ExampleGroups::BinMoveExecutingACLIApplication:0x000000014f9bf0>).input_to_index(*(any args))
+            expected: 1 time with any arguments
+            received: 0 times with any arguments
+      # ./spec/03_cli_spec.rb:36:in `block (2 levels) in <top (required)>'
+
+  17) ./bin/move executing a CLI Application calls move passing the index
+      Failure/Error: expect(self).to receive(:move).with(anything, 0, any_args), "Make sure `bin/move` is passing the index, not the input to the `#move` method."
+        (#<RSpec::ExampleGroups::BinMoveExecutingACLIApplication:0x000000014ef678>).move(anything, 0, *(any args))
+            expected: 1 time with arguments: (anything, 0, *(any args))
+            received: 0 times
+      # ./spec/03_cli_spec.rb:46:in `block (2 levels) in <top (required)>'
+
+  18) ./bin/move executing a CLI Application move modifies the board correctly
+      Failure/Error: board = get_variable_from_file("./bin/move", "board")
+      NameError:
+        local variable `board' not defined in ./bin/move.
+      # ./spec/spec_helper.rb:16:in `rescue in get_variable_from_file'
+      # ./spec/spec_helper.rb:13:in `get_variable_from_file'
+      # ./spec/03_cli_spec.rb:55:in `block (2 levels) in <top (required)>'
+
+  19) ./bin/move executing a CLI Application calls display_board passing the modified board
+      Failure/Error: expect(self).to receive(:display_board).with(["X", " ", " ", " ", " ", " ", " ", " ", " "]).at_least(:once)
+        (#<RSpec::ExampleGroups::BinMoveExecutingACLIApplication:0x000000014c5cb0>).display_board(["X", " ", " ", " ", " ", " ", " ", " ", " "])
+            expected: at least 1 time with arguments: (["X", " ", " ", " ", " ", " ", " ", " ", " "])
+            received: 0 times
+      # ./spec/03_cli_spec.rb:65:in `block (2 levels) in <top (required)>'
+
+  20) ./bin/move executing a CLI Application prints the board with a move to the top left
+      Failure/Error: expect(output).to include(" X |   |   ")
+        expected "" to include " X |   |   "
+      # ./spec/03_cli_spec.rb:75:in `block (2 levels) in <top (required)>'
+
+Finished in 0.09714 seconds (files took 0.30852 seconds to load)
+20 examples, 20 failures
+
+Failed examples:
+
+rspec ./spec/01_input_to_index_spec.rb:5 # #input_to_index converts a user_input to an integer
+rspec ./spec/01_input_to_index_spec.rb:11 # #input_to_index subtracts 1 from the user_input
+rspec ./spec/01_input_to_index_spec.rb:17 # #input_to_index returns -1 for strings without integers
+rspec ./spec/02_move_spec.rb:4 # ./lib/move.rb defines a move method
+rspec ./spec/02_move_spec.rb:10 # ./lib/move.rb #move accepts 3 arguments: the board, the position a player wants to fill and their char, X or O
+rspec ./spec/02_move_spec.rb:14 # ./lib/move.rb #move provides a default value for the 3rd argument
+rspec ./spec/02_move_spec.rb:19 # ./lib/move.rb #move allows "X" player in the top left position
+rspec ./spec/02_move_spec.rb:26 # ./lib/move.rb #move allows "O" player in the middle
+rspec ./spec/02_move_spec.rb:33 # ./lib/move.rb #move allows "X" player in the bottom right
+rspec ./spec/02_move_spec.rb:40 # ./lib/move.rb #move allows "X" player in the bottom right and "O" in the top left 
+rspec ./spec/02_move_spec.rb:48 # ./lib/move.rb #move allows "X" to win diagonally
+rspec ./spec/02_move_spec.rb:57 # ./lib/move.rb #move allows a tie game
+rspec ./spec/03_cli_spec.rb:4 # ./bin/move executing a CLI Application defines a board variable
+rspec ./spec/03_cli_spec.rb:14 # ./bin/move executing a CLI Application prints "Welcome to Tic Tac Toe!"
+rspec ./spec/03_cli_spec.rb:23 # ./bin/move executing a CLI Application asks the user for input
+rspec ./spec/03_cli_spec.rb:31 # ./bin/move executing a CLI Application converts the users input to an index
+rspec ./spec/03_cli_spec.rb:41 # ./bin/move executing a CLI Application calls move passing the index
+rspec ./spec/03_cli_spec.rb:51 # ./bin/move executing a CLI Application move modifies the board correctly
+rspec ./spec/03_cli_spec.rb:60 # ./bin/move executing a CLI Application calls display_board passing the modified board
+rspec ./spec/03_cli_spec.rb:70 # ./bin/move executing a CLI Application prints the board with a move to the top left
+
