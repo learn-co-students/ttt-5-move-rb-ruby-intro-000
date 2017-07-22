@@ -3,3 +3,19 @@
 require_relative '../lib/move.rb'
 
 # Code your CLI Here
+
+puts "Welcome to Tic Tac Toe!"
+print "Where would you like to go?"
+display_board
+
+
+=begin  
+ Welcome to Tic Tac Toe!
+Where would you like to go?
+2
+   | X |   
+-----------
+   |   |   
+-----------
+   |   |   
+=end
