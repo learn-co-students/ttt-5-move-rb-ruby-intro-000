@@ -3,3 +3,99 @@
 require_relative '../lib/move.rb'
 
 # Code your CLI Here
+puts("Hi and welcome to Tic-Tac-Toe game!")
+
+board = [' ',' ',' ', ' ',' ',' ', ' ',' ',' ']
+current_player_symbol = 'X'
+busy_cells = 0
+
+while (busy_cells < 9) do
+
+  puts("Please enter your move (1 to 9):")
+
+  ms = gets.strip
+  m = ms.to_i
+
+  if (m >= 1) and (m <= 9)
+
+    #puts "board[m-1] = #{board[m-1]}#"
+
+    if (board[m-1] == ' ')
+
+      board[m-1] = current_player_symbol
+
+      busy_cells = busy_cells + 1
+
+      display_board(board)
+
+      if ((
+          (board[1-1] == current_player_symbol) and
+          (board[2-1] == current_player_symbol) and
+          (board[3-1] == current_player_symbol)
+         ) or
+         (
+           (board[4-1] == current_player_symbol) and
+           (board[5-1] == current_player_symbol) and
+           (board[6-1] == current_player_symbol)
+          ) or
+          (
+            (board[7-1] == current_player_symbol) and
+            (board[8-1] == current_player_symbol) and
+            (board[9-1] == current_player_symbol)
+           ) or
+           (
+             (board[1-1] == current_player_symbol) and
+             (board[5-1] == current_player_symbol) and
+             (board[9-1] == current_player_symbol)
+            ) or
+            (
+              (board[3-1] == current_player_symbol) and
+              (board[5-1] == current_player_symbol) and
+              (board[7-1] == current_player_symbol)
+             ) or
+             (
+               (board[2-1] == current_player_symbol) and
+               (board[5-1] == current_player_symbol) and
+               (board[8-1] == current_player_symbol)
+              ) or
+              (
+                (board[4-1] == current_player_symbol) and
+                (board[5-1] == current_player_symbol) and
+                (board[6-1] == current_player_symbol)
+               ) or
+              (
+                (board[1-1] == current_player_symbol) and
+                (board[4-1] == current_player_symbol) and
+                (board[7-1] == current_player_symbol)
+               ) or
+               (
+                (board[2-1] == current_player_symbol) and
+                (board[5-1] == current_player_symbol) and
+                (board[8-1] == current_player_symbol)
+               ) or
+               (
+                (board[3-1] == current_player_symbol) and
+                (board[6-1] == current_player_symbol) and
+                (board[9-1] == current_player_symbol)
+               ))
+               puts "#{current_player_symbol} wins!"
+               busy_cells = 9
+             end
+
+      if current_player_symbol == 'X'
+        current_player_symbol = 'O'
+      else
+        current_player_symbol = 'X'
+      end
+
+    else
+      puts("This cell is already busy. Please choose another one.")
+      display_board(board)
+    end
+
+  else
+    puts("Cell number is out of range (1..9). Please enter correct cell number (1..9)!")
+  end
+end
+
+#display_board(board)
