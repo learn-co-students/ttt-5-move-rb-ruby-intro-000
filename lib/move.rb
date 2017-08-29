@@ -1,3 +1,5 @@
+board=[" "," "," "," "," "," "," "," "," "]
+
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -12,6 +14,8 @@ def input_to_index(n)
 "#{n}".to_i-1
 end
 
-def move(array, position, char = "X")
-  array[position] = char
+def move(array, index, char = "X")
+  array[index] = char
 end
+
+board
