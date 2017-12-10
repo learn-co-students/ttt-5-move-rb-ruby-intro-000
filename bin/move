@@ -10,6 +10,6 @@ input = gets.strip
 
 index = input_to_index(input)
 
-update_array_at_with(board,index,"X")
+move(board,index,"X")
 
 display_board(board)
