@@ -13,9 +13,13 @@ end
 
 display_board(board)
 
-puts "Where would you like to go?"
-input = gets.strip
-index = input.to_i - 1
+def input_to_index(index)
+  puts "Where would you like to go?"
+  input = gets.strip
+  index = input.to_i - 1
+end
+
+index = input_to_index(index)
 
 
 def update_array_at_with(array,index,value)
