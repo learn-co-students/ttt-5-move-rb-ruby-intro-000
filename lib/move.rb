@@ -7,3 +7,11 @@ def display_board(board)
 end
 
 # code your input_to_index and move method here!
+def input_to_index(user_input)
+  index = user_input.to_i - 1
+  #because if user wants to move to square 1, that is position 0 in the board array
+end
+
+def move(board, index, x_or_o="X")
+  board[index] = x_or_o
+end
