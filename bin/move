@@ -1,5 +1,22 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/move.rb'
+require_relative '../lib/input_to_index.rb'
+
 
 # Code your CLI Here
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+turn = "X"
+puts "Welcome to Tic Tac Toe!"
+puts "Where would you like to go?"
+user_input = gets.strip
+converted_input = input_to_index(user_input)
+move(board,converted_input,"X")
+if turn == "X"
+  then
+    turn = "O"
+  else
+    turn = "X"
+end
+puts turn
+display_board(board)
