@@ -6,10 +6,10 @@ def display_board(board)
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
 
-def input_to_index(user_number)
-  user_number.to_i - 1
+def input_to_index(index)
+  index.to_i - 1
 end
 
-def move(board_array, user_number, character = "O" )
-  board_array[user_number] = "O"
+def move(board,index,token = "X")
+  board[index] = token
 end
