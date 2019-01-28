@@ -7,3 +7,12 @@ def display_board(board)
 end
 
 # code your input_to_index and move method here!
+
+'#{board}'.to_i + 1
+
+def move(board, peice, character)
+  gets.strip = board
+
+  character = X
+
+end
