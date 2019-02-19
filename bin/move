@@ -1,5 +1,11 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/move.rb'
-
-# Code your CLI Here
+puts "Welcome to Tic Tac Toe!"
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+display_board(board)
+puts "Which cell position do you want to mark 1/9?"
+position = input_to_index(gets.strip)
+#cell_index = input_to_index(position)
+move(board, position)
+display_board(board)
