@@ -3,3 +3,14 @@
 require_relative '../lib/move.rb'
 
 # Code your CLI Here
+puts "Welcome to Tic Tac Toe!"
+puts "Where would you like to go?"
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+input = gets.strip
+index = input_to_index(input)
+
+move(board, index)
+
+display_board(board)
+
+# this line: "move(board, index, me = "X")" is calling the move method with 3 arguments from lib, but I do not need call the 3rd argument because it's already established that I am X?
