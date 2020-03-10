@@ -9,4 +9,4 @@ index = input_to_index(input)
 the_board_array,the_index,the_players_character="X"
 move(board, index)
 
-display_board = ["X"," "," "," "," "," "," "," "," "]
+display_board (board)
