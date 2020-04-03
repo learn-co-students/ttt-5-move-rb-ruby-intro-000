@@ -3,15 +3,11 @@
 require_relative '../lib/move.rb'
 puts "Welcome to Tic Tac Toe!"
 board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-play(board)
 puts "Where would you like to go?"
 input = gets.strip
 index = input_to_index(input)
 def input_to_index(string)
   string.to_i - 1
-end
-def move(board, index, player)
-   board[index] = player
 end
 def display_board(board)
    puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -20,4 +16,5 @@ def display_board(board)
    puts "-----------"
    puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
+move(board, index)
 display_board(board)

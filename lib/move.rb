@@ -9,13 +9,8 @@ end
 def input_to_index(user_input)
   user_input.to_i - 1
 end
-def move(board, index, player)
+def move(board, index, player = "X")
    board[index] = player
-end
-describe '#move' do
- it 'does not allow for a default third argument' do
-  board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-  expect {move(board, 2)}.to raise_error(ArgumentError)
 end
 def position_taken?(board, index)
    if (board[index] == " ") || (board[index] == "") || (board[index] == nil)
@@ -23,3 +18,4 @@ def position_taken?(board, index)
    else
       return true
    end
+end
