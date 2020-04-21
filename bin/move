@@ -3,3 +3,38 @@
 require_relative '../lib/move.rb'
 
 # Code your CLI Here
+starting_board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+puts "Welcome to Tic Tac Toe!"
+puts "Please enter your name."
+name = gets.strip
+puts "Hi #{name}! Are you ready to play?(please enter y or n)"
+choice = gets.strip
+
+def wants_to_play(choice)
+  if choice.upcase == "Y"
+    puts "Great! Select your character (X or O)."
+    character_selection = gets.strip
+    return character_selection
+  else
+    puts "Sorry you were not in the mood. Goodbye"
+    exit
+  # else
+  #   puts "Please enter y or n!"
+  #   new_choice = gets.strip
+  #   wants_to_play(new_choice)
+  end
+end
+
+player_character = wants_to_play(choice)
+
+display_board(starting_board)
+
+puts "Where would you like to go?"
+puts "Please, select a position (1-9)"
+player_selection = gets.strip
+
+index = input_to_index(player_selection)
+
+move(board, index, player_character)
+display_board(board)
