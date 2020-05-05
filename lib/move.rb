@@ -13,9 +13,8 @@ end
 # code your input_to_index and move method here!
 
 
-def move(board, num, x_or_o="X")
-  board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
-  index = input_to_index(input)
+def move(board, index, x_or_o = "X")
+  board = board
   board[index] = x_or_o
   board
 end
