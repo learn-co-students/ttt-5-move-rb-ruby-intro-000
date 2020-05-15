@@ -1,5 +1,27 @@
 #!/usr/bin/env ruby
+# Above is the shebang line that tells the terminal which interpreter to use to execute the remainder of the file
 
 require_relative '../lib/move.rb'
 
 # Code your CLI Here
+
+board = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+
+puts "Welcome to Tic Tac Toe!"
+puts "Where would you like to go?"
+input = gets.strip
+
+position = input_to_index(input)
+
+# Modifies board with X placement on the board
+move(board, position)
+
+# Uses modified board to display
+display_board(board)
+
+# input_to_index()
+
+# display_board(board)
+
+
+### Run file with:      ruby bin/move
