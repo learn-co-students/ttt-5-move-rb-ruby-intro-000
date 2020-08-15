@@ -7,26 +7,9 @@ def display_board(board)
 end
 
 def input_to_index(user_input)
-  if user_input == "1"
-    user_input = 0
-  elsif user_input == "2"
-    user_input = 1
-  elsif user_input == "3"
-    user_input = 2
-  elsif user_input == "4"
-    user_input = 3
-  elsif user_input == "5"
-    user_input = 4
-  elsif user_input == "6"
-    user_input = 5
-  elsif user_input == "7"
-    user_input = 6
-  elsif user_input == "8"
-    user_input = 7
-  else
-    return -1
-  end
+  user_input = user_input.to_i - 1
 end
 
 def move(board, index, char = "X")
+  board[index] = char
 end
