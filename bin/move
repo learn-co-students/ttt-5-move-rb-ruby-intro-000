@@ -1,5 +1,17 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/move.rb'
-
-# Code your CLI Here
+board = "   "
+def display_board(board)
+  puts " #{board[0]} | #{board[1]} | #{board[2]} "
+  puts "-----------"
+  puts " #{board[3]} | #{board[4]} | #{board[5]} "
+  puts "-----------"
+  puts " #{board[6]} | #{board[7]} | #{board[8]} "
+end
+define move
+move = gets.strip
+input_to_index = move.to_i
+board = input_to_index - 1
+puts "Welcome to Tic Tac Toe!"
+puts "Where would you like to go?"
