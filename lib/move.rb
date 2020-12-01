@@ -8,11 +8,11 @@ end
 
 # code your input_to_index and move method here!
 def input_to_index(input)
-  puts "Where would you like to move?"
+  puts "Where would you like to go?"
   (input.to_i) - 1
 end
 
-board = [" "," "," "," "," "," "," "," "," "]
+
 
 def move(board, index, value = "X")
   board[index] = value
