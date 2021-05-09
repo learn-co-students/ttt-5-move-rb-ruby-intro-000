@@ -1,3 +1,5 @@
+# Tic Tac Toe Welcome page
+
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -5,16 +7,14 @@ def display_board(board)
   puts "-----------"
   puts " #{board[6]} | #{board[7]} | #{board[8]} "
 end
-
-# code your input_to_index and move method here!
+#input_to_index converts a user_input to an integer
 def input_to_index(user_input)
-  index = user_input.to_i - 1
+  new_user_input = user_input.to_i
+  new_user_input -= 1
+  return new_user_input
 end
 
-def input_to_index(input)
-  input = index.to_i - 1
-end
-
-def move(board, index, user_marker = "X")
-  board[index.to_i] = user_marker
+def move(board, index, character = "X")
+  board[index] = character
+  return board
 end
